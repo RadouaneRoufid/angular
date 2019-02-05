@@ -1,0 +1,15 @@
+<h1>Roufid tutorials: Angular Spring boot file download</h1>
+
+<h2>Download from file system</h2>
+<form (ngSubmit)="downloadFileSystem()">
+  <input [(ngModel)]="fileSystemName" name="file-system">
+  <button [disabled]="!fileSystemName">Download file system</button>
+</form>
+
+<h2>Download from claspath</h2>
+<form (ngSubmit)="downloadClasspathFile()">
+  <input [(ngModel)]="classpathFileName" name="classpath-file">
+  <button [disabled]="!classpathFileName">Download classpath file</button>
+</form>
+
+<router-outlet></router-outlet>
