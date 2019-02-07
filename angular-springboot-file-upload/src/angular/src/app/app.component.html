@@ -1,0 +1,16 @@
+<h1>Roufid File upload tutorial</h1>
+
+<div>
+  <input #fileInput type="file" ng2FileSelect [uploader]="uploader"/>
+
+  <div class="drop-box" ng2FileDrop
+       [ngClass]="{'dragover': isDropOver}"
+       [uploader]="uploader"
+       (fileOver)="fileOverAnother($event)"
+       (click)="fileClicked()">
+    <span class="drag-in-title">Import or drag file here</span>
+    <span class="drag-over-title">Drop the file</span>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
