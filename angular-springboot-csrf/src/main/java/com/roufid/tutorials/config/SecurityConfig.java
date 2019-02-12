@@ -18,16 +18,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 				.httpBasic()
 				.and()
-				.csrf()
-				.ignoringAntMatchers(CSRF_IGNORE)
-				.csrfTokenRepository(csrfTokenRepository())
+				.csrf() // csrf config starts here
+				.ignoringAntMatchers(CSRF_IGNORE) // URI where CSRF check will not be applied
+				.csrfTokenRepository(csrfTokenRepository()) // defines a repository where tokens are stored
 				.and()
-				.addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class);
+				.addFilterAfter(new CustomCsrfFilter(), CsrfFilter.class); // Csrf filter in which we will add the cookie
 	}
 
 	private CsrfTokenRepository csrfTokenRepository() {
 		HttpSessionCsrfTokenRepository repository = new HttpSessionCsrfTokenRepository();
-		repository.setHeaderName(CsrfHeaderFilter.CSRF_COOKIE_NAME);
+		repository.setHeaderName(CustomCsrfFilter.CSRF_COOKIE_NAME);
 		return repository;
 	}
 }

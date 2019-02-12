@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class CsrfHeaderFilter extends OncePerRequestFilter {
+public class CustomCsrfFilter extends OncePerRequestFilter {
 
 	public static final String CSRF_COOKIE_NAME = "XSRF-TOKEN";
 
