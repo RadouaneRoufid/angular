@@ -1,6 +1,9 @@
 import {MapsAPILoader} from '@agm/core';
 import {Component, OnInit} from '@angular/core';
 
+import PlaceResult = google.maps.places.PlaceResult;
+import GeocoderRequest = google.maps.GeocoderRequest;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
